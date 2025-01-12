@@ -22,8 +22,15 @@ fn main() {
     println!("array {:?} = {:?}", [10, 7, 8, 9, 1, 5], sorted_array);
 
     println!(
-        "array {:?} search element {:?}",
+        "array {:?} search element {:?} index [{:?}]",
         [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-        basic::function::liner_search([1, 2, 3, 4, 5, 6, 7, 8, 9, 10].to_vec(), 10)
+        10,
+        basic::function::liner_search([1, 2, 3, 4, 5, 6, 7, 8, 9, 10].to_vec(), 10),
+    );
+    println!(
+        "array {:?} search element {:?} index [{:?}]",
+        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        10,
+        basic::function::binary_search([1, 2, 3, 4, 5, 6, 7, 8, 9, 10].to_vec(), 10),
     )
 }

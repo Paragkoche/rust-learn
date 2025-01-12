@@ -63,3 +63,19 @@ pub fn liner_search(array: Vec<i128>, search_element: i128) -> Result<usize, &'s
     }
     return Err("element not found");
 }
+
+pub fn binary_search(array: Vec<i128>, search_element: i128) -> i128 {
+    let mut low = 0;
+    let mut high = array.len();
+    while low < high {
+        let mid = (low + high) / 2;
+        if array[mid] == search_element {
+            return mid as i128;
+        } else if array[mid] < search_element {
+            low = mid + 1;
+        } else {
+            high = mid;
+        }
+    }
+    -1
+}
