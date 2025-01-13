@@ -1,3 +1,5 @@
+use basic::print;
+
 mod basic;
 
 fn main() {
@@ -65,13 +67,17 @@ fn main() {
     link_l.add_data(1);
     link_l.add_data(2);
     link_l.add_data(3);
-    link_l.add_data(3);
     link_l.add_data(4);
-    link_l.add_data(1);
     link_l.add_data(5);
+    link_l.add_data(6);
     link_l.add_data(7);
     link_l.add_data(8);
     link_l.add_data(9);
+    if let Some(hash) = link_l.get_hash(8) {
+        println!("{:?}", hash);
+        link_l.remove_data(hash as u32);
+    }
+
     link_l.add_data(10);
 
     link_l.show_data();

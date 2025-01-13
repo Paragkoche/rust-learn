@@ -65,7 +65,8 @@ impl list {
     }
     pub fn add_data(&mut self, data: i128) {
         let mut link: link_lis = link_lis::new();
-        if self.array.len() == 0 {
+        if self.array[0].data == 0 {
+            self.array.clear();
             link.add_data(data, None);
         } else {
             link.add_data(
@@ -77,8 +78,13 @@ impl list {
     }
 
     pub fn remove_data(&mut self, head: u32) {
+        println!("data :{:?}", head as *mut u32);
+
         for i in 0..self.array.len() {
+            println!("data :{} ", self.array[i].data);
+
             if self.array[i].head == Some(head as *mut u32) {
+                print!("data :{}", self.array[i].data);
                 self.array[i].data = 0;
                 self.array[i].head = None;
                 if i + 1 < self.array.len() {
@@ -87,6 +93,11 @@ impl list {
                 }
             }
         }
+    }
+    pub fn get_hash(&self, index: usize) -> Option<*mut u32> {
+        let a = &self.array[index];
+        println!("data :{:?}", a.head);
+        a.head
     }
 
     pub fn show_data(&self) {
