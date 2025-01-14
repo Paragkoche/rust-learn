@@ -1,5 +1,3 @@
-use basic::print;
-
 mod basic;
 
 fn main() {
